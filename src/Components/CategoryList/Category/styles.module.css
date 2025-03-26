@@ -1,0 +1,63 @@
+.categoryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+    padding: 20px;
+}
+
+.categoryCard {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categoryCard:hover {
+    transform: scale(1.05);
+}
+
+.categoryImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.categoryBody {
+    padding: 15px;
+    width: 100%;
+}
+
+.categoryTitle {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.categoryId {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.categoryButton {
+    display: inline-block;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.categoryButton:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+}

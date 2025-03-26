@@ -6,10 +6,10 @@ const CategoryList = () => {
   const [categories, setCategories] = useState([]);
 
   const getCategories = () => {
-    ApiClient.get('/categories')
+    ApiClient.get("/categories")
       .then((response) => {
         console.log(response.data);
-        setCategories(response.data)
+        setCategories(response.data);
       })
       .catch((error) => console.log(error));
   };

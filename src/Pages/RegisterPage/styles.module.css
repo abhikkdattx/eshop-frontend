@@ -1,6 +1,143 @@
-.wrapper{
-    background-color: #fff;
-    padding: 40px 40px;
-    margin-top: 100px;
-    box-shadow: 8px 8px #888;
+:root {
+    --primary-color: #6a0dad;
+    --background-color: #f7f3fc;
+    --input-border: #d1a3ff;
+    --input-focus: #5e0ba0;
+    --button-hover: #5a009d;
+    --error-color: #d9534f;
+    --success-color: #28a745;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color), #9b5de5);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.card {
+    background: var(--background-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: slideUp 0.6s ease-in-out;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.inputGroup {
+    text-align: left;
+    margin-bottom: 15px;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.inputField {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.inputField:focus {
+    border-color: var(--input-focus);
+    outline: none;
+    transform: scale(1.02);
+}
+
+.inputError {
+    border-color: var(--error-color) !important;
+}
+
+.error {
+    color: var(--error-color);
+    font-size: 14px;
+}
+
+.registerButton {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.registerButton:hover {
+    background: var(--button-hover);
+    transform: scale(1.05);
+}
+
+.footerText {
+    margin-top: 20px;
+    font-size: 14px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.link {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: var(--button-hover);
+}
+
+.successAlert,
+.errorAlert {
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.successAlert {
+    background-color: var(--success-color);
+}
+
+.errorAlert {
+    background-color: var(--error-color);
 }

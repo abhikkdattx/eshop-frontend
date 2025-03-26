@@ -1,59 +1,56 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "./styles.modules.css";
 import { useParams } from "react-router-dom";
 import ApiClient from "../../client/ApiClient";
+import styles from "./styles.module.css";
 
 const ProductDetail = () => {
-  const {id} = useParams();
-
-  const [product, setProduct] = useState([]);
-
-  const getProduct = async () => {
-    try {
-      const response = await ApiClient.get(
-        `http://localhost:8080/api/products/${id}`
-      );
-      setProduct(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const response = await ApiClient.get(
+          `https://api.escuelajs.co/api/v1/products/${id}`
+        );
+        setProduct(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getProduct();
   }, [id]);
 
+  if (!product) {
+    return <div className={styles.loading}>Loading...</div>;
+  }
+
   return (
-    <div className="container">
-      <div className="row ">
-        <div className="col-md-6">
-          <div className="wrapper">
-            <img src={product.images} alt="" className="img-fluid" />
+    <div className={`container ${styles.productDetailContainer}`}>
+      <div className="row justify-content-center align-items-center">
+        <div className="col-md-6 d-flex justify-content-center">
+          <div className={styles.imageWrapper}>
+            <img
+              src={product.images}
+              alt={product.title}
+              className={styles.productImage}
+            />
           </div>
         </div>
         <div className="col-md-6">
-          <div className="wrapper">
-            <h5 className="card-title">{product.title}</h5>
-            <p className="card-text">
-              <span className="badge badge-secondary">
-                {product.category?.name}
-              </span>
+          <div className={styles.detailsWrapper}>
+            <h2 className={styles.productTitle}>{product.title}</h2>
+            <p className={styles.category}>
+              <span className={styles.badge}>{product.category?.name}</span>
             </p>
-            <p>
-              {product.description}
-            </p>
-            <h2>
-              <span>&#8377;</span>
-              {product.price}
-            </h2>
-            <a href="#" className="btn btn-dark">
-              Add to Cart
-            </a>
+            <p className={styles.description}>{product.description}</p>
+            <h3 className={styles.price}>
+              <span>&#8377;</span> {product.price}
+            </h3>
+            <button className={styles.addToCartBtn}>Add to Cart</button>
           </div>
         </div>
       </div>
-      <br/>
     </div>
   );
 };

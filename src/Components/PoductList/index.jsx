@@ -7,8 +7,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   const getProducts = () => {
-    ApiClient
-      .get("http://localhost:8080/api/products")
+    ApiClient.get("https://api.escuelajs.co/api/v1/products")
       .then((response) => setProducts(response.data))
       .catch((error) => console.log(error));
   };

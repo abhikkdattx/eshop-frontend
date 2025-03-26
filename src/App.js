@@ -7,6 +7,7 @@ import ProductPage from "./Pages/ProductPage";
 import RegisterPage from "./Pages/RegisterPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import LearnMore from "./Pages/LearnMorePage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/products/detail/:id" element={<ProtectedRoute Component={ProductDetailPage} />} />
           <Route path="/about" element={<ProtectedRoute Component={AboutPage} />} />
           <Route path="/contacts" element={<ProtectedRoute Component={ContactPage} />} />
+          <Route path="/about/learn-more" element={<ProtectedRoute Component={LearnMore} />} />
         </Routes>
       </BrowserRouter>
     </>

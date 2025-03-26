@@ -1,0 +1,96 @@
+.navbar {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.brand:hover {
+    color: #f9c80e;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navItem {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.navItem::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f9c80e;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.navItem:hover::after {
+    width: 100%;
+}
+
+.authButtons {
+    display: flex;
+    gap: 15px;
+}
+
+.loginButton,
+.logoutButton {
+    border: none;
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+/* Login Button */
+.loginButton {
+    background: white;
+    color: #6a11cb;
+}
+
+.loginButton:hover {
+    background: #f9c80e;
+    color: #fff;
+}
+
+.logoutButton {
+    background: #ff4d4d;
+    color: white;
+}
+
+.logoutButton:hover {
+    background: #cc0000;
+}

@@ -1,22 +1,24 @@
 import { Link } from "react-router-dom";
+import styles from "./styles.module.css";
 
 const Header = () => {
   return (
-    <div className="jumbotron text-center bg-light py-5">
-      <div className="container">
-        <h1 className="display-4 fw-bold text-dark">Welcome to E-Shop!</h1>
-        <p className="lead text-secondary">
+    <div className={styles.headerContainer}>
+      <video autoPlay loop muted playsInline className={styles.headerVideo}>
+        <source
+          src="https://videos.pexels.com/video-files/3917742/3917742-uhd_2732_1440_25fps.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div className={styles.overlay}>
+        <h1 className="display-4 fw-bold text-light">Welcome to E-Shop!</h1>
+        <p className="lead text-light">
           Your one-stop solution for all your shopping needs.
         </p>
-        <hr className="my-4" />
-        <p className="text-muted">
-          Explore our exclusive collections and shop with confidence.
-        </p>
-        <div className="d-flex justify-content-center">
-          <Link className="btn btn-dark btn-lg px-4" to="/products" role="button">
-            Start Shopping
-          </Link>
-        </div>
+        <Link className={styles.btnShop} to="/products">
+          Start Shopping
+        </Link>
       </div>
     </div>
   );

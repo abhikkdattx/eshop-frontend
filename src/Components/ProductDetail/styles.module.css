@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+.productDetailContainer {
+    margin-top: 40px;
+    padding: 40px;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #14052e, #230b4a);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.imageWrapper {
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.productImage {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: contain;
+    transition: transform 0.4s ease-in-out;
+}
+
+.productImage:hover {
+    transform: scale(1.05);
+}
+
+.detailsWrapper {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    animation: fadeUp 0.8s ease-in-out;
+}
+
+.productTitle {
+    font-size: 30px;
+    font-weight: 600;
+    color: #e0e0ff;
+    margin-bottom: 10px;
+}
+
+.category {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.badge {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.description {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.addToCartBtn {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 75, 50, 0.3);
+}
+
+.addToCartBtn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
