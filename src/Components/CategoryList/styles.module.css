@@ -69,7 +69,6 @@
     background: linear-gradient(to right, #2575fc, #6a11cb);
 }
 
-/* Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;

@@ -36,7 +36,6 @@ const ContactList = () => {
   return (
     <div className={styles.container}>
       <div className="row">
-        {/* Left Side - Form */}
         <div className="col-md-6">
           <div className={styles.wrapper}>
             <h4>Request a call.</h4>
@@ -158,7 +157,6 @@ const ContactList = () => {
           </div>
         </div>
 
-        {/* Right Side - Contact Options */}
         <div className="col-md-6">
           <div className={styles.wrapper}>
             <div className="d-flex flex-column">

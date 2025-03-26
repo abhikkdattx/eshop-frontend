@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import styles from "./styles.module.css"; // Import the styled CSS module
+import styles from "./styles.module.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
